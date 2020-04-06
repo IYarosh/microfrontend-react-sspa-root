@@ -2,8 +2,30 @@
     <head>
         <title>Microfrontend based on single-spa</title>
         <meta charset="utf-8" />
+        <!-- <script type="systemjs-importmap">
+            {
+                "imports": {
+                    "microfrontend-react-sspa/app1": "https://raw.githubusercontent.com/IYarosh/microfrontend-react-sspa-app1/master/dist/microfrontend-react-sspa-app1.js"
+                }
+            }
+        </script> -->
+        <script type="systemjs-importmap">
+            {
+                "imports": {
+                    "microfrontend-react-sspa/app1": "http://localhost:8081/test.js"
+                }
+            }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides/dist/import-map-overrides.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/amd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/named-exports.min.js"></script>
     </head>
     <body>
         <h2>Root container</h2>
+        <div id="root"></div>
+        <script>
+            System.import('microfrontend-react-sspa/app1');
+        </script>
     </body>
 </html>
