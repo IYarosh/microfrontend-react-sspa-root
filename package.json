@@ -4,7 +4,7 @@
   "description": "",
   "main": "single-spa-config.js",
   "scripts": {
-    "start": "webpack && webpack-dev-server"
+    "start": "webpack && webpack-dev-server --port 8080"
   },
   "repository": {
     "type": "git",
