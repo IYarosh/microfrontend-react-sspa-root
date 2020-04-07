@@ -2,17 +2,10 @@
     <head>
         <title>Microfrontend based on single-spa</title>
         <meta charset="utf-8" />
-        <!-- <script type="systemjs-importmap">
-            {
-                "imports": {
-                    "microfrontend-react-sspa/app1": "https://raw.githubusercontent.com/IYarosh/microfrontend-react-sspa-app1/master/dist/microfrontend-react-sspa-app1.js"
-                }
-            }
-        </script> -->
         <script type="systemjs-importmap">
             {
                 "imports": {
-                    "microfrontend-react-sspa/app1": "http://localhost:8081/test.js",
+                    "microfrontend-react-sspa/app1": "http://localhost:8081/microfrontend-react-sspa-app1.js",
                     "microfrontend-react-sspa/app2": "http://localhost:8082/microfrontend-react-sspa-app2.js"
                 }
             }
@@ -24,11 +17,10 @@
     </head>
     <body>
         <h2>Root container</h2>
+        <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
         <div id="root"></div>
         <div id="root-app2"></div>
         <script>
-            System.import('microfrontend-react-sspa/app1');
-            System.import('microfrontend-react-sspa/app2');
         </script>
     <script src="bundle.js"></script></body>
 </html>

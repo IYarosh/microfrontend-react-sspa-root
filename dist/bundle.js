@@ -117,7 +117,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var single_spa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! single-spa */ \"./node_modules/single-spa/lib/esm/single-spa.min.js\");\n\r\n\r\n\r\n// singleSpa.registerApplication(\r\n//     \"microfrontend-react-sspa-app1\",\r\n//     () => System.import(\"microfrontend-react-sspa/app1\"),\r\n//     () => true\r\n//   );\r\n  \r\n// singleSpa.start();\n\n//# sourceURL=webpack:///./src/single-spa-config.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var single_spa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! single-spa */ \"./node_modules/single-spa/lib/esm/single-spa.min.js\");\n\r\n\r\nfunction showWhen(prefix) {\r\n    return function (location) {\r\n        console.log('location:', location.pathname, prefix, location.pathname === prefix)\r\n        return location.pathname == prefix;\r\n    }\r\n}\r\nsingle_spa__WEBPACK_IMPORTED_MODULE_0__[\"registerApplication\"](\r\n    \"microfrontend-react-sspa-app1\",\r\n    () => System.import(\"microfrontend-react-sspa/app1\"),\r\n    showWhen('/app1')\r\n);\r\n\r\nsingle_spa__WEBPACK_IMPORTED_MODULE_0__[\"registerApplication\"](\r\n    \"microfrontend-react-sspa-app2\",\r\n    () => System.import(\"microfrontend-react-sspa/app2\"),\r\n    showWhen('/app2')\r\n)\r\n  \r\nsingle_spa__WEBPACK_IMPORTED_MODULE_0__[\"start\"]();\n\n//# sourceURL=webpack:///./src/single-spa-config.js?");
 
 /***/ })
 

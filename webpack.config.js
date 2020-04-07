@@ -11,6 +11,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'index.html') })
     ],
+    module: {
+        rules: [
+            { parser: { system: false } },
+        ]
+    },
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
         historyApiFallback: true,
